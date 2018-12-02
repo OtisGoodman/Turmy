@@ -28,7 +28,7 @@ if (config.username == "" || config.avatarUrl =="" || config.url == "" || config
     console.log(chalk.red('Error: Please Provide All Settings Fields'));
 
 }else{
-    const turmy = new Discord.WebhookClient(config.url, config.token);
+    const turmy = new Discord.WebhookClient(config.id, config.token);
 
     rl.question('What Do You Want Turmy To Say ', (content) => {
      send(content,config.avatarUrl,config.username,turmy)
