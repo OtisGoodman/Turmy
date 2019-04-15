@@ -1,4 +1,4 @@
-# turmy
+# Turmy
 An Annoying Web hook that has a thing for saying TBH
 
 
@@ -13,15 +13,19 @@ An Annoying Web hook that has a thing for saying TBH
 
 >Edit settings.json.
 
-> token the webhook id for turmy put the link in your brouser and find a fild called token.
+> The token and webhook id for turmy can be found by opening the webhook link you get.
 
-> avatarUrl a link to the img for turmys avatar.
+> Copy the token and ID and paste them in there respective fields.
 
-> username the username for the bot.
-
-> id the webhook id for turmy put the link in your brouser and find a fild called id.
-
-> Run Run.bat and enter the thing you want turmy to say.
+> Run Run.bat and enter the thing you want Turmy to say.
 
 
-
+*Config Explanation*
+```
+{
+ "username":(the username you want the webhook to have.),
+ "avatarUrl": (A link to the webhook's avatar. <I recomend i.imgur.com for uploading custom avatars>),
+ "token": (The webhook's token that you find when you open the webhook link.),
+ "id": (The webhook's is that you find when you open the webhook link.)
+}
+```
