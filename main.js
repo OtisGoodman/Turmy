@@ -38,15 +38,3 @@ if (config.username == "" || config.avatarUrl =="" || config.url == "" || config
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
