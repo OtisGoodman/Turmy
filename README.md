@@ -2,6 +2,10 @@
 An Annoying Web hook that has a thing for saying TBH
 
 
+![STATUS](https://img.shields.io/endpoint.svg?label=Project%20Status%3A&logo=github&style=popout-square&url=https://raw.githubusercontent.com/OtisGoodman/Badge-Controller/master/Turmy.json)
+
+
+
 > How To Use
 ***
 
