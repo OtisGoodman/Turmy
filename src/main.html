@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Tumry</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  </head>
+  <body>
+      <div class="top">
+        <div class="dot close" onclick="close" title="close" style="background:#ED594A;">
+            +
+        </div>
+        <p class="title">Turmy</p>
+      </div>
+      <div class="display">
+        <div class="content">
+            <p class="howto"><i>Type your message below and hit enter.<br>
+            Click <a onclick="opendocs()" class="link">here</a> for documentation.
+            </i></p>
+          <div class="screen">
+        <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
+          </div>
+        </div>
+      </div>
+    <script>
+              const electron = require("electron");
+        const IPC = electron.ipcRenderer;
+        document.querySelector('.close').addEventListener('click', function() {
+            IPC.send('closeMain');
+              });
+              function opendocs(){
+                IPC.send('swapDocs');
+              }
+    </script>
+  </body>
+</html>
