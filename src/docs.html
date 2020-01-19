@@ -26,10 +26,10 @@
               const electron = require("electron");
         const IPC = electron.ipcRenderer;
         document.querySelector('.close').addEventListener('click', function() {
-            IPC.send('closeMain');
-              });
+            IPC.send("swapMain")
+          });
               function opendocs(){
-                IPC.send('opendocs');
+                IPC.send('swapDocs');
               }
     </script>
   </body>

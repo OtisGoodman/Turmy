@@ -5,12 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .container {
   border-radius: 8px;
   overflow: hidden;
 }
-
 .top {
   display: flex;
   align-items: center;
@@ -49,7 +47,6 @@
   align-items: center;
   transition: color 0.3s;
   transform: rotate(45deg);
-
 }
 .close {
   transform: rotate(45deg);
@@ -103,16 +100,6 @@ body {
   height: 100%;
   background-color: #ddd;
 }
-.keys {
-  flex: 1;
-  padding: 16px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
-  justify-items: center;
-  align-items: center;
-}
-
 .msg{
     text-align: center;
     margin: auto;
@@ -129,4 +116,19 @@ body {
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+  font-style: italic;
+}
+.footer{
+  bottom: 0px;
+  text-align: right;
+  border: 5px,red;
+  background-color: #C4C4C4;
+}
+.footer p{
+  font-size: 15px;
+  margin:auto;
+}
+spacer{
+margin-left: 10px;
+margin-right: 10px;
 }

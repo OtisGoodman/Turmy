@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE css>
 <html>
   <head>
     <meta charset="UTF-8"/>
@@ -14,23 +14,24 @@
       </div>
       <div class="display">
         <div class="content">
-            <p class="howto"><i>Type your message below and hit enter.<br>
-            Click <a onclick="opendocs()" class="link">here</a> for documentation.
-            </i></p>
+            <p class="howto"><i>Type your message below and hit enter.<br></i></p>
           <div class="screen">
         <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
+          </div>
+          <div class="footer">
+            <p><a onclick="" class="link">docs</a><spacer><a class="link" onclick="">config</a><spacer><a class="link" onclick="">github</a></p>
           </div>
         </div>
       </div>
     <script>
-              const electron = require("electron");
+        const electron = require("electron");
         const IPC = electron.ipcRenderer;
         document.querySelector('.close').addEventListener('click', function() {
             IPC.send('closeMain');
-              });
-              function opendocs(){
-                IPC.send('swapDocs');
-              }
+          });
+          function opendocs(){
+            IPC.send('swapDocs');
+          }
     </script>
   </body>
 </html>
