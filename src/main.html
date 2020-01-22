@@ -19,7 +19,7 @@
         <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
           </div>
           <div class="footer">
-            <p><a onclick="" class="link">docs</a><spacer><a class="link" onclick="">config</a><spacer><a class="link" onclick="">github</a></p>
+            <p><a onclick="redirect('Docs')" class="link">docs</a><spacer><a class="link" onclick="">config</a><spacer><a class="link" onclick="openExternalLink('https://github.com/OtisGoodman/Turmy')">github</a></p>
           </div>
         </div>
       </div>
@@ -29,8 +29,12 @@
         document.querySelector('.close').addEventListener('click', function() {
             IPC.send('closeMain');
           });
-          function opendocs(){
-            IPC.send('swapDocs');
+          function openExternalLink(url) {
+            var shell = require("electron").shell;
+            shell.openExternal(url)
+            }
+          function redirect(page){
+            IPC.send(`swap${page}`);
           }
     </script>
   </body>

@@ -14,16 +14,20 @@
       </div>
       <div class="display">
         <div class="content">
-            <p class="howto"><i>Type your message below and hit enter.<br>
-            Click <a onclick="opendocs()" class="link">here</a> for documentation.
-            </i></p>
-          <div class="screen">
-        <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
-          </div>
+          <p class="howto">
+            <br><b>Setup</b><br>
+            Before you use Turmy make sure to configure him. You will need to set the webhook token and ID in your config file.<br><br>
+            Use the guide <a onclick="openExternalLink('https://gist.github.com/OtisGoodman/9e17909a046fbce21d193efc796c3330')" class="link" target="_blank">here</a> for info on creating a webhook
+            <br><br>
+            </p>
         </div>
       </div>
     <script>
-              const electron = require("electron");
+const electron = require("electron");
+    function openExternalLink(url) {
+      var shell = require("electron").shell;
+      shell.openExternal(url)
+      }
         const IPC = electron.ipcRenderer;
         document.querySelector('.close').addEventListener('click', function() {
             IPC.send("swapMain")
