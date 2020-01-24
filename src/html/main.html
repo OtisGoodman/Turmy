@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8"/>
     <title>Tumry</title>
-    <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
   </head>
   <body>
       <div class="top">
@@ -19,7 +19,7 @@
         <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
           </div>
           <div class="footer">
-            <p><a onclick="redirect('Docs')" class="link">docs</a><spacer><a class="link" onclick="">config</a><spacer><a class="link" onclick="openExternalLink('https://github.com/OtisGoodman/Turmy')">github</a></p>
+            <p><a onclick="redirect('Docs')" class="link">docs</a><spacer><a class="link" onclick="redirect('Config')">config</a><spacer><a class="link" onclick="openExternalLink('https://github.com/OtisGoodman/Turmy')">github</a></p>
           </div>
         </div>
       </div>
@@ -36,6 +36,8 @@
           function redirect(page){
             IPC.send(`swap${page}`);
           }
+
+
     </script>
   </body>
 </html>

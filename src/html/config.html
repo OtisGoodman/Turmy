@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Tumry</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+  </head>
+  <body>
+      <div class="top">
+        <div class="dot close" onclick="close" title="close" style="background:#ED594A;">
+            +
+        </div>
+        <p class="title">Turmy - Config</p>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p>Jokes On You! No Content!</p>
+        </div>
+      </div>
+    <script>
+const electron = require("electron");
+    function openExternalLink(url) {
+      var shell = require("electron").shell;
+      shell.openExternal(url)
+      }
+        const IPC = electron.ipcRenderer;
+        document.querySelector('.close').addEventListener('click', function() {
+            IPC.send("swapMain")
+          });
+    </script>
+  </body>
+</html>
