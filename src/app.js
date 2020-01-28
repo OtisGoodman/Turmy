@@ -5,7 +5,6 @@ const path = require('path');
 const ipc = require('electron').ipcMain
 const ipcRenderer = require('electron').ipcRenderer
 const webhook = require("./webhookHandler.js")
-
 var resize = true;
 app.on('ready', () => {
   mainWindow = new BrowserWindow({

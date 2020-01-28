@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/OtisGoodman/Turmy#readme",
   "dependencies": {
-    "discord-webhook": "^0.1.0",
-    "electron": "^7.1.9"
+    "electron": "^7.1.9",
+    "electron-store": "^5.1.0",
+    "webhook-discord": "^3.5.1"
   }
 }

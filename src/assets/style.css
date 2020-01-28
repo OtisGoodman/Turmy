@@ -131,3 +131,32 @@ spacer{
 margin-left: 10px;
 margin-right: 10px;
 }
+label{
+  user-select: none;
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  display:block;
+}
+.save{
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin: 4px 2px;
+cursor: pointer;
+}
+.clear{
+background-color: darkred;
+border: none;
+color: white;
+padding: 2px 4px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin: 4px 2px;
+cursor: pointer;
+}

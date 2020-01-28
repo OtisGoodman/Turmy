@@ -1,9 +1,12 @@
-const ipc = require('electron').ipcMain
+const ipc = require('electron').ipcMain;
 const webhook = require("webhook-discord");
-ipc.on('webhook', (event,url,msg,username) => {
-  const wh = new webhook.Webhook(url);
+var storage = require("./storage.js")
+ipc.on('webhook', (event,msg) => {
+  const wh = new webhook.Webhook(storage.get('url'));
   const message = new webhook.MessageBuilder()
-                  .setName(username)
+                  .setName(storage.get('username'))
                   .setText(msg)
   wh.send(message);
-})
+  storage.set('ping',"pong")
+  console.log(storage.get("ping"))
+});

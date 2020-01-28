@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <title>Tumry</title>
+    <title>Turmy</title>
     <link rel="stylesheet" type="text/css" href="../assets/style.css" />
   </head>
   <body>
@@ -14,19 +14,53 @@
       </div>
       <div class="display">
         <div class="content">
-          <p>Jokes On You! No Content!</p>
+            <div class="screen">
+          <input type="text" name="msg" class = 'msg' id="url" inputsize ="50px" placeholder="url"><br>
+          <input type="text" name="msg" class = 'msg' id="username" inputsize ="50px" placeholder="username"><br>
         </div>
+        </div>
+        <button class="save" onclick="save()">Save</button>
       </div>
     <script>
-const electron = require("electron");
-    function openExternalLink(url) {
-      var shell = require("electron").shell;
-      shell.openExternal(url)
+    const storage = require('../storage.js')
+    var shell = require("electron").shell;
+    const ipc = require("electron").ipcRenderer;
+    var defaultURL = ""
+    var defaultName = "Turmy"
+
+
+
+    var url = document.getElementById('url')
+    var username = document.getElementById('username')
+    username.placeholder = storage.get('username');
+    url.placeholder = storage.get('url');
+
+    function openExternalLink(link) {
+      shell.openExternal(link)
       }
-        const IPC = electron.ipcRenderer;
-        document.querySelector('.close').addEventListener('click', function() {
-            IPC.send("swapMain")
-          });
+    function save() {
+      if(username.value != ""){
+        storage.set("username",username.value)
+        username.placeholder = storage.get('username');
+        username.value = null;
+      }
+      if(url.value != ""){
+        storage.set("url",url.value)
+        url.placeholder = storage.get('url');
+        url.value = null;
+      }
+      }
+    function clear() {
+      storage.set("url",defaultURL)
+      storage.set("username",defaultName)
+      username.placeholder = storage.get('username');
+      url.placeholder = storage.get('url');
+      url.value = defaultURL;
+      username.value = defaultName;
+    }
+    document.querySelector('.close').addEventListener('click', function() {
+     ipc.send("swapMain")
+     });
     </script>
   </body>
 </html>

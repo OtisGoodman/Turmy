@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <title>Tumry</title>
+    <title>Turmy</title>
     <link rel="stylesheet" type="text/css" href="../assets/style.css" />
   </head>
   <body>
@@ -23,15 +23,16 @@
         </div>
       </div>
     <script>
-const electron = require("electron");
+    var shell = require("electron").shell;
+    const ipc = require("electron").ipcRenderer;
+
     function openExternalLink(url) {
-      var shell = require("electron").shell;
       shell.openExternal(url)
       }
-        const IPC = electron.ipcRenderer;
-        document.querySelector('.close').addEventListener('click', function() {
-            IPC.send("swapMain")
-          });
+
+    document.querySelector('.close').addEventListener('click', function() {
+     ipc.send("swapMain")
+     });
     </script>
   </body>
 </html>

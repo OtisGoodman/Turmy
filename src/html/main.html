@@ -1,8 +1,8 @@
-<!DOCTYPE css>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8"/>
-    <title>Tumry</title>
+    <title>Turmy</title>
     <link rel="stylesheet" type="text/css" href="../assets/style.css" />
   </head>
   <body>
@@ -26,18 +26,19 @@
     <script>
         const electron = require("electron");
         const IPC = electron.ipcRenderer;
+        var shell = require("electron").shell;
+
         document.querySelector('.close').addEventListener('click', function() {
             IPC.send('closeMain');
           });
+
           function openExternalLink(url) {
-            var shell = require("electron").shell;
             shell.openExternal(url)
             }
+
           function redirect(page){
             IPC.send(`swap${page}`);
           }
-
-
     </script>
   </body>
 </html>
