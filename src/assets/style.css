@@ -111,6 +111,12 @@ body {
   margin: auto;
   font-size: 15px;
 }
+.howto2{
+  user-select: none;
+  text-align: center;
+  margin: auto;
+  font-size: 14px;
+}
 .link{
   color: darkblue;
   text-decoration: underline;
@@ -159,4 +165,14 @@ text-decoration: none;
 display: inline-block;
 margin: 4px 2px;
 cursor: pointer;
+}
+.msg-d{
+    text-align: center;
+    margin: auto;
+    height: 30px;
+    user-select: none;
+    border: 3px solid darkred;
+}
+.msg:focus {
+    border: 3px solid #555;
 }

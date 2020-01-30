@@ -14,9 +14,9 @@
       </div>
       <div class="display">
         <div class="content">
-            <p class="howto"><i>Type your message below and hit enter.<br></i></p>
+            <p class="howto2"><i>Before using the webhook make sure to read the docs.<br></i></p>
           <div class="screen">
-        <input type="text" name="msg" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
+        <input type="text" name="msg"  id = "input" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
           </div>
           <div class="footer">
             <p><a onclick="redirect('Docs')" class="link">docs</a><spacer><a class="link" onclick="redirect('Config')">config</a><spacer><a class="link" onclick="openExternalLink('https://github.com/OtisGoodman/Turmy')">github</a></p>
@@ -27,7 +27,8 @@
         const electron = require("electron");
         const IPC = electron.ipcRenderer;
         var shell = require("electron").shell;
-
+        const storage = require('../storage.js')
+        isConfigWriten()
         document.querySelector('.close').addEventListener('click', function() {
             IPC.send('closeMain');
           });
@@ -39,6 +40,23 @@
           function redirect(page){
             IPC.send(`swap${page}`);
           }
+
+        function isConfigWriten() {
+          if (storage.get("url") == "undefined" || storage.get("username" == "undefined")){
+            document.getElementById("input").className = "msg-d";
+            document.getElementById("input").disabled = true;
+          }else{
+            document.getElementById("input").className = "msg";
+            document.getElementById("input").disabled = false;
+          }
+        }
+
+
+
+        function clearStorage() {
+          storage.clear("url")
+          storage.clear("username")
+        }
     </script>
   </body>
 </html>

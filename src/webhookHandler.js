@@ -7,6 +7,4 @@ ipc.on('webhook', (event,msg) => {
                   .setName(storage.get('username'))
                   .setText(msg)
   wh.send(message);
-  storage.set('ping',"pong")
-  console.log(storage.get("ping"))
 });

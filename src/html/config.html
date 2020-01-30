@@ -14,9 +14,12 @@
       </div>
       <div class="display">
         <div class="content">
+          <p class="howto"><i>Mouse over input fields for more info.<br></i></p>
+
             <div class="screen">
-          <input type="text" name="msg" class = 'msg' id="url" inputsize ="50px" placeholder="url"><br>
-          <input type="text" name="msg" class = 'msg' id="username" inputsize ="50px" placeholder="username"><br>
+          <input type="text" name="msg" title="Turmy URL" class = 'msg' id="url" inputsize ="50px" placeholder="url"><br>
+          <input type="text" name="msg" class = 'msg' title="Turmy Webhook Username" id="username" inputsize ="50px" placeholder="username"><br>
+        <!--  <input type="text" name="msgLn2" class = 'msg' title="Turmy Webhook Avatar Url" id="avatarUrl" inputsize ="50px" placeholder="username"><br></-->
         </div>
         </div>
         <button class="save" onclick="save()">Save</button>
@@ -32,8 +35,11 @@
 
     var url = document.getElementById('url')
     var username = document.getElementById('username')
+    var avatarUrl = document.getElementById('avatarUrl')
+
     username.placeholder = storage.get('username');
     url.placeholder = storage.get('url');
+    //avatarUrl.placeholder = storage.get('avatarUrl');
 
     function openExternalLink(link) {
       shell.openExternal(link)
@@ -49,15 +55,13 @@
         url.placeholder = storage.get('url');
         url.value = null;
       }
+      if(avatarUrl.value != ""){
+        storage.set("avatarUrl",avatarUrl.value)
+        avatarUrl.placeholder = storage.get('avatarUrl');
+        avatarUrl.value = null;
       }
-    function clear() {
-      storage.set("url",defaultURL)
-      storage.set("username",defaultName)
-      username.placeholder = storage.get('username');
-      url.placeholder = storage.get('url');
-      url.value = defaultURL;
-      username.value = defaultName;
-    }
+      }
+
     document.querySelector('.close').addEventListener('click', function() {
      ipc.send("swapMain")
      });
