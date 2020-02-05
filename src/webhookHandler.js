@@ -6,5 +6,6 @@ ipc.on('webhook', (event,msg) => {
   const message = new webhook.MessageBuilder()
                   .setName(storage.get('username'))
                   .setText(msg)
+                  .setAvatar(storage.get("avatarUrl"))
   wh.send(message);
 });

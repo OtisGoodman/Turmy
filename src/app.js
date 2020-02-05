@@ -2,10 +2,10 @@ const {app, BrowserWindow} = require('electron');
 let mainWindow;
 let docsWindow;
 const path = require('path');
-const ipc = require('electron').ipcMain
-const ipcRenderer = require('electron').ipcRenderer
-const webhook = require("./webhookHandler.js")
-var resize = true;
+const ipc = require('electron').ipcMain;
+const ipcRenderer = require('electron').ipcRenderer;
+const webhook = require("./webhookHandler.js");
+
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 350,
@@ -23,6 +23,7 @@ mainWindow.setResizable(false);
 mainWindow.loadURL('file://' + __dirname + '/html/main.html');
 mainWindow.setIcon(path.join(__dirname, '/assets/icon.png'));
 });
+
 app.on('window-all-closed', () => {
   app.quit();
 })

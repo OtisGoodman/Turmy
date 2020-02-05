@@ -133,7 +133,7 @@ body {
   font-size: 15px;
   margin:auto;
 }
-spacer{
+space{
 margin-left: 10px;
 margin-right: 10px;
 }
@@ -175,4 +175,11 @@ cursor: pointer;
 }
 .msg:focus {
     border: 3px solid #555;
+}
+.error{
+  user-select: none;
+  text-align: center;
+  font-size: 17px;
+  margin: auto;
+  color: #ff5722;
 }
