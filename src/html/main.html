@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Turmy</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+
+  </head>
+  <body>
+      <div class="top">
+        <div class="dot close" onclick="close" title="close" style="background:#ED594A;">
+            +
+        </div>
+        <p class="title">Turmy</p>
+      </div>
+      <div class="display">
+        <div class="content">
+            <p class="howto2"><i>Before using the webhook make sure to read the docs.<br></i></p>
+          <div class="screen">
+        <input type="text" name="msg"  id = "msg" oninput="onUpdate()" class = 'msg' title="Turmy Message" inputsize ="50px" placeholder="Turmy Message"><br>
+          </div>
+            <button class="fire-d" id="btn" onclick="fire()">Fire</button>
+
+            <div class="footer">
+            <p><a onclick="redirect('Docs')" class="link">docs</a><space><a class="link" onclick="redirect('Config')">config</a><space><a class="link" onclick="openExternalLink('https://github.com/OtisGoodman/Turmy')">github</a></p>
+
+          </div>
+        </div>
+      </div>
+      <script>
+        const electron = require("electron");
+        const IPC = electron.ipcRenderer;
+        const shell = require("electron").shell;
+        const storage = require('../storage.js')
+        document.querySelector('.close').addEventListener('click', function() {
+            IPC.send('closeMain');
+          });
+          function openExternalLink(url) {
+            shell.openExternal(url)
+            }
+          function redirect(page){
+            IPC.send(`swap${page}`);
+          }
+            if (storage.get("username") == undefined){
+                clearStorage()
+        }
+            if (storage.get('url') == "Webhook URL"){
+              document.getElementById("msg").className = "msg-d";
+              document.getElementById("msg").disabled = true;
+              document.getElementById("btn").className = "fire-d";
+              document.getElementById("btn").disabled = true;
+              document.getElementById("msg").placeholder = "Error! Please Configure!"
+          }
+        function onUpdate() {
+            var content = document.getElementById("msg").value;
+            if (content == ""){
+                document.getElementById("btn").className = "fire-d";
+                document.getElementById("btn").disabled = true;
+            }else{
+                document.getElementById("btn").className = "fire";
+                document.getElementById("btn").disabled = false;
+            }
+        }
+            
+        function fire() {
+        var content = document.getElementById("msg").value;
+        IPC.send("webhook",content);
+        console.warn("Webhook Fired!\n"+content);
+        document.getElementById("msg").value = null;
+        onUpdate()
+        }
+        function clearStorage() {
+          storage.set("url","Webhook URL");
+          storage.set("username","Webhook Username");
+          storage.set("avatarUrl","https://i.imgur.com/aSqkpCU.png");
+        }
+        function wipeStorage() {
+            storage.clear();
+        }
+    </script>
+  </body>
+</html>

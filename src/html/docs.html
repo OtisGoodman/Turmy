@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Turmy</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+  </head>
+  <body>
+      <div class="top">
+        <div class="dot close" onclick="close" title="close" style="background:#ED594A;">
+            +
+        </div>
+        <p class="title">Turmy - Docs</p>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p class="howto">
+            <br><b>Setup</b><br>
+            Before you use Turmy make sure to configure him. You will need to set the webhook URL in your config file.<br><br>
+            Make sure to set the webhook username in the config file.<br><br>
+            Turmy can't detect if the URL is invalid so make sure the URL is valid.<br><br>
+            Use the guide <a onclick="openExternalLink('https://gist.github.com/OtisGoodman/9e17909a046fbce21d193efc796c3330')" class="link" target="_blank">here</a> for info on creating a webhook
+            <br><br>
+            </p>
+        </div>
+      </div>
+    <script>
+    var shell = require("electron").shell;
+    const ipc = require("electron").ipcRenderer;
+
+    function openExternalLink(url) {
+      shell.openExternal(url)
+      }
+
+    document.querySelector('.close').addEventListener('click', function() {
+     ipc.send("swapMain")
+     });
+    </script>
+  </body>
+</html>
