@@ -172,6 +172,8 @@ cursor: pointer;
     height: 30px;
     user-select: none;
     border: 3px solid darkred;
+  cursor:  not-allowed;
+
 }
 .msg:focus {
     border: 3px solid #555;
@@ -182,4 +184,31 @@ cursor: pointer;
   font-size: 17px;
   margin: auto;
   color: #ff5722;
+}
+.fire{
+  background-color: #a73d33;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 98%;
+  border-radius: 5%;
+}
+.fire-d{
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 98%;
+  border-radius: 5%;
+  cursor:  not-allowed;
 }

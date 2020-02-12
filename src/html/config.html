@@ -21,10 +21,10 @@
           <input type="text" name="msg" class = 'msg' title="Turmy Webhook Username" id="username" inputsize ="50px" placeholder="username"><br>
         <!--  <input type="text" name="msgLn2" class = 'msg' title="Turmy Webhook Avatar Url" id="avatarUrl" inputsize ="50px" placeholder="username"><br></-->
         </div>
-        </div>
-        <button class="save" onclick="save()">Save</button>
       </div>
-    <script>
+          <button class="save" onclick="save()">Save</button>
+      </div>
+      <script>
     const storage = require('../storage.js')
     var shell = require("electron").shell;
     const ipc = require("electron").ipcRenderer;

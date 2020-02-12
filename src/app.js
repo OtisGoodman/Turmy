@@ -23,7 +23,6 @@ mainWindow.setResizable(false);
 mainWindow.loadURL('file://' + __dirname + '/html/main.html');
 mainWindow.setIcon(path.join(__dirname, '/assets/icon.png'));
 });
-
 app.on('window-all-closed', () => {
   app.quit();
 })
