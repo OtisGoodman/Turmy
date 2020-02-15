@@ -2,8 +2,11 @@
   "name": "turmy",
   "version": "2.0.0",
   "description": "A Webhook Controler",
+  "main": "src/app.js",
   "scripts": {
-    "start": "electron src/app.js"
+    "start": "electron src/app.js",
+    "compile": "electron-packager . Turmy --overwrite --platform=win32 --arch=ia32 --prune=true --out=build --version-string.CompanyName=OtisGoodman --version-string.FileDescription=\"A Discord Webhook For Trolling\", --version-string.ProductName=\"Turmy\" -- icon=./src/assets/ico.ico",
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -16,10 +19,13 @@
   },
   "homepage": "https://github.com/OtisGoodman/Turmy#readme",
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^5.1.0",
+    "electron-winstaller": "^4.0.0",
     "webhook-discord": "^3.5.1"
   },
   "devDependencies": {
-    "electron": "^7.1.9"
+    "electron": "^7.1.9",
+    "electron-builder": "^22.3.2"
   }
 }
