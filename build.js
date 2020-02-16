@@ -4,10 +4,10 @@ var settings = {
     outputDirectory: './build/turmy-installer',
     authors: 'Otis_Goodman',
     exe: 'turmy.exe',
-    setupIcon:'./src/assets/ico.ico',
+    setupIcon:'./ico.ico',
+    icon:'./ico.ico',
     iconUrl:"https://raw.githubusercontent.com/OtisGoodman/Turmy/master/ico.ico",
-    "noMsi":true,
-    "loading_gif":"./src/assets/loading.gif"
+    "noMsi":true
 };
 
 resultPromise = electronInstaller.createWindowsInstaller(settings);

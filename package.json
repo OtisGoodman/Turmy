@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "electron src/app.js",
-    "compile": "electron-packager . Turmy --overwrite --platform=win32 --arch=ia32 --prune=true --out=build --version-string.CompanyName=OtisGoodman --version-string.FileDescription=\"A Discord Webhook For Trolling\", --version-string.ProductName=\"Turmy\" -- icon=./src/assets/ico.ico",
+    "compile": "electron-packager . Turmy --overwrite --platform=win32 --arch=ia32 --prune=true --out=build --version-string.CompanyName=OtisGoodman --version-string.FileDescription=\"A Discord Webhook For Trolling\", --version-string.ProductName=\"Turmy\" -- icon=ico.ico",
     "build": "node build.js"
   },
   "repository": {
