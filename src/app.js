@@ -62,7 +62,7 @@ app.on('ready', () => {
   transparent: true,
   webPreferences: {
     nodeIntegration: true,
-    devTools: true
+    devTools: false
   }
 });
 mainWindow.setResizable(false);
