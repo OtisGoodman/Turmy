@@ -1,6 +1,6 @@
 {
   "name": "turmy",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A Webhook Controler",
   "main": "src/app.js",
   "scripts": {

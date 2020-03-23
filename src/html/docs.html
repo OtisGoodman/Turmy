@@ -24,17 +24,6 @@
             </p>
         </div>
       </div>
-    <script>
-    var shell = require("electron").shell;
-    const ipc = require("electron").ipcRenderer;
-
-    function openExternalLink(url) {
-      shell.openExternal(url)
-      }
-
-    document.querySelector('.close').addEventListener('click', function() {
-     ipc.send("swapMain")
-     });
-    </script>
+      <script src = "../js/docs.js"></script>
   </body>
 </html>
