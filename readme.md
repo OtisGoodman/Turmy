@@ -1,6 +1,6 @@
 # **TURMY**
 > _A Discord Webhook Used For Trolling_
-*PLEASE NOTE:* This software only works on windows.
+*PLEASE NOTE:* This software only works on windows.<br>
 ![STATUS](https://img.shields.io/endpoint.svg?label=Project%20Status%3A&logo=github&style=popout-square&url=https://raw.githubusercontent.com/OtisGoodman/Badge-Controller/master/Turmy.json)
 <br>
 <br>
