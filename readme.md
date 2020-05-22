@@ -6,7 +6,7 @@
 <br>
 <br>
 <br>
-[Download](https://github.com/OtisGoodman/Turmy/releases/download/2.0/Turmy.-.Installer.exe)
+![Download](https://github.com/OtisGoodman/Turmy/releases/download/2.0/Turmy.-.Installer.exe)
 <br>
 <br>
 Building Yourself:
