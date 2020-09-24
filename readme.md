@@ -2,13 +2,9 @@
 > _A Discord Webhook Used For Trolling_
 *PLEASE NOTE:* This software only works on windows.<br>
 
-<br>
-<br>
-<br>
-<br>
- ![Download](https://github.com/OtisGoodman/Turmy/releases/download/2.0/Turmy.-.Installer.exe)
-<br>
-<br>
+![Maintained](https://img.shields.io/badge/Maintained%3A-False-red?style=flat-square&logo=github)
+
+![Download](https://github.com/OtisGoodman/Turmy/releases/download/2.0/Turmy.-.Installer.exe)
 Building Yourself:
 
 1. Download Node.js
